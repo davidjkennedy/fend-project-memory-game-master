@@ -26,9 +26,17 @@ function shuffle(array) {
 }
 
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
+ // set up the event listener for a card. If a card is clicked:
+
+ let allCards = document.querySelectorAll('.card');
+ allCards.forEach(function(card) {
+   card.addEventListener('click', function(e) {
+     // console.log(e);
+     card.classList.add('open', 'show')
+   });
+ });
+
+ /*  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
  *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
